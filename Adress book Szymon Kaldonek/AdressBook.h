@@ -12,11 +12,9 @@ class AdressBook
 {
 	vector<Record> RecordContainer;
 	int tableCap;
-	int recordNum;
 
 public:
 	AdressBook();
-	int getTableCap();
 	int getVectorCap();
 	bool addRecord(const Record& newRecord);
 	Record getRecord(int);

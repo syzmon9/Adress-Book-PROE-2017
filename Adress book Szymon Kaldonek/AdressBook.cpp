@@ -5,13 +5,8 @@ using namespace std;
 AdressBook::AdressBook()
 {
 	tableCap = 0;
-	recordNum = 1;
 }
 
-int AdressBook::getTableCap()
-{
-	return tableCap;
-}
 
 int AdressBook::getVectorCap()
 {
@@ -24,7 +19,6 @@ bool AdressBook::addRecord(const Record& newRecord)
 	{
 		RecordContainer.push_back(newRecord);
 		tableCap++;
-		recordNum++;
 		return 1;
 	}
 	catch (const exception&)
@@ -35,7 +29,7 @@ bool AdressBook::addRecord(const Record& newRecord)
 
 AdressBook::~AdressBook()
 {
-	//delete AdressBook;
+
 }
 
 ostream& operator <<(ostream& output, const Record& t)
@@ -82,7 +76,6 @@ bool AdressBook::readFromFile()
 			cout << "Reading records from database failed." << endl;
 		}
 		
-		temp.classNumber = i + 1;
 		file >> temp;
 		addRecord(temp);
 
@@ -97,7 +90,7 @@ bool AdressBook::saveToFile()
 
 	try
 	{
-		for (int i = 0; i < getTableCap(); ++i)
+		for (int i = 0; i < getVectorCap(); ++i)
 		{
 			ofs << RecordContainer[i].name << endl;
 			ofs << RecordContainer[i].surname << endl;
@@ -140,7 +133,7 @@ void AdressBook::searchRecord()
 		cout << "Enter name: ";
 		cin >> search;
 		cout << "- - - - - - - - - - " << endl;
-		for (int i = 0; i < getTableCap(); i++)
+		for (int i = 0; i < getVectorCap(); i++)
 		{
 			if (RecordContainer[i].name == search)
 			{
@@ -157,7 +150,7 @@ void AdressBook::searchRecord()
 		cout << "Enter surname: ";
 		cin >> search;
 		cout << "- - - - - - - - - - " << endl;
-		for (int i = 0; i < getTableCap(); i++)
+		for (int i = 0; i < getVectorCap(); i++)
 		{
 			if (RecordContainer[i].surname == search)
 			{
@@ -174,7 +167,7 @@ void AdressBook::searchRecord()
 		cout << "Enter street: ";
 		cin >> search;
 		cout << "- - - - - - - - - - " << endl;
-		for (int i = 0; i < getTableCap(); i++)
+		for (int i = 0; i < getVectorCap(); i++)
 		{
 			if (RecordContainer[i].street == search)
 			{
@@ -191,7 +184,7 @@ void AdressBook::searchRecord()
 		cout << "Enter house number: ";
 		cin >> search;
 		cout << "- - - - - - - - - - " << endl;
-		for (int i = 0; i < getTableCap(); i++)
+		for (int i = 0; i < getVectorCap(); i++)
 		{
 			if (RecordContainer[i].houseNumber == search)
 			{
@@ -208,7 +201,7 @@ void AdressBook::searchRecord()
 		cout << "Enter postal code: ";
 		cin >> search;
 		cout << "- - - - - - - - - - " << endl;
-		for (int i = 0; i < getTableCap(); i++)
+		for (int i = 0; i < getVectorCap(); i++)
 		{
 			if (RecordContainer[i].postalCode == search)
 			{
@@ -225,7 +218,7 @@ void AdressBook::searchRecord()
 		cout << "Enter city: ";
 		cin >> search;
 		cout << "- - - - - - - - - - " << endl;
-		for (int i = 0; i < getTableCap(); i++)
+		for (int i = 0; i < getVectorCap(); i++)
 		{
 			if (RecordContainer[i].city == search)
 			{
@@ -266,7 +259,7 @@ void AdressBook::editRecord()
 	int counter = 0;
 	cin >> search;
 	cout << "- - - - - - - - - - " << endl;
-	for (int i = 0; i < getTableCap(); i++)
+	for (int i = 0; i < getVectorCap(); i++)
 	{
 		if (RecordContainer[i].surname == search)
 		{
@@ -394,7 +387,7 @@ void AdressBook::deleteRecord()
 	int counter = 0;
 	cin >> search;
 	cout << "- - - - - - - - - - " << endl;
-	for (int i = 0; i < getTableCap(); i++)
+	for (int i = 0; i < getVectorCap(); i++)
 	{
 		if (RecordContainer[i].surname == search)
 		{

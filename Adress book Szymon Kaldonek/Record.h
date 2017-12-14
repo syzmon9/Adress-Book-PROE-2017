@@ -8,7 +8,6 @@ class Record
 {
 public:
 	string name, surname, street, houseNumber, postalCode, city;
-	int classNumber;
 
 	Record(string, string, string, string, string, string);
 	Record();

@@ -2,7 +2,8 @@
 Projekt Ksiazka adresowa
 
 wykona³: Szymon Ka³donek
-nr albumu: 295037
+Politechnika Warszawska 
+wydzia³ Elektroniki i Technik Informacyjnych
 
 */
 
@@ -43,22 +44,18 @@ int main()
 			cout << "\n------ Adding a record ------" << endl;
 			string tempName, tempSurname, tempStreet, tempHouseNumber, tempPostal, tempCity;
 			cout << "Enter name: ";
-			cin >> tempName;
+			getline(cin, tempName);
 			cout << "Enter surname: ";
-			cin >> tempSurname;
+			getline(cin, tempSurname);
 			cout << "Enter street: ";
-			cin >> tempStreet;
+			getline(cin, tempStreet);
 			cout << "Enter house number: ";
-			cin >> tempHouseNumber;
+			getline(cin, tempHouseNumber);
 			cout << "Enter postal code: ";
-			cin >> tempPostal;
+			getline(cin, tempPostal);
 			cout << "Enter city: ";
-			cin >> tempCity;
+			getline(cin, tempCity);
 			Record record(tempName, tempSurname, tempStreet, tempHouseNumber, tempPostal, tempCity);
-			/*Record r1("Donata", "Blokesz", "Opawska", "21/9", "47-400", "Raciborz");
-			Record r2("Szymon", "Kaldonek", "Lazurowa", "183/51", "01-479", "Warszawa");
-			phoneBook.addRecord(r1);
-			phoneBook.addRecord(r2);*/
 			if (adressBook.addRecord(record) == 1)
 				cout << "Record added sucesfully" << endl;
 			else

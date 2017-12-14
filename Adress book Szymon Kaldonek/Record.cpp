@@ -17,41 +17,34 @@ Record::Record(string name, string surname, string street, string houseNumber, s
 
 Record::Record() : name(""), surname(""), street(""), houseNumber(""), postalCode(""), city("")
 {
-	classNumber = 0;
+
 }
 
 Record::~Record()
 {
+
 }
 
 istream& operator >>(fstream& inputFile, Record& t)
 {
-	int nextObjStart = 0;// (t.classNumber - 1) * 6 + 1;
+	int nextObjStart = 0;
 	int currentLine = 1;
 	string lineFromFile;
 
-	//while (getline(inputFile, lineFromFile))
 	{
-		//if (currentLine == nextObjStart) 
 		getline(inputFile, lineFromFile);
-			t.name = lineFromFile;
-		//if (currentLine == nextObjStart + 1) 
-			getline(inputFile, lineFromFile);
-			t.surname = lineFromFile;
-		//if (currentLine == nextObjStart + 2) 
-			getline(inputFile, lineFromFile);
-			t.street = lineFromFile;
-		//if (currentLine == nextObjStart + 3) 
-			getline(inputFile, lineFromFile);
-			t.houseNumber = lineFromFile;
-		//if (currentLine == nextObjStart + 4)
-			getline(inputFile, lineFromFile);
-			t.postalCode = lineFromFile;
-		//if (currentLine == nextObjStart + 5) 
-			getline(inputFile, lineFromFile);
-			t.city = lineFromFile;
+		t.name = lineFromFile;
+		getline(inputFile, lineFromFile);
+		t.surname = lineFromFile;
+		getline(inputFile, lineFromFile);
+		t.street = lineFromFile;
+		getline(inputFile, lineFromFile);
+		t.houseNumber = lineFromFile;
+		getline(inputFile, lineFromFile);
+		t.postalCode = lineFromFile;
+		getline(inputFile, lineFromFile);
+		t.city = lineFromFile;
 		currentLine++;
 	}
-
 	return inputFile;
 }
