@@ -115,7 +115,10 @@
     <ClInclude Include="Record.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AdressBook.cpp" />
+    <ClCompile Include="AdressBook.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Record.cpp" />
   </ItemGroup>

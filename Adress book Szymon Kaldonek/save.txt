@@ -5,7 +5,7 @@ Ulica
 12-345
 Miasto
 Szymon
-Kaldone
+Kaldonek
 Nowowiejska
 15
 00-665
@@ -16,3 +16,9 @@ pl.
 Politechniki
 1
 warszawa
+Paul
+Walker
+Lakowa
+5
+47-450
+Roszkow

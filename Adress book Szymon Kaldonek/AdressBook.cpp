@@ -2,18 +2,20 @@
 
 using namespace std;
 
-AdressBook::AdressBook()
+template<typename T>
+AdressBook<T>::AdressBook()
 {
 	tableCap = 0;
 }
 
-
-int AdressBook::getVectorCap()
+template<typename T>
+int AdressBook<T>::getVectorCap()
 {
 	return RecordContainer.size();
 }
 
-bool AdressBook::addRecord(const Record& newRecord)
+template<typename T>
+bool AdressBook<T>::addRecord(const Record& newRecord)
 {
 	try
 	{
@@ -27,18 +29,20 @@ bool AdressBook::addRecord(const Record& newRecord)
 	}
 }
 
-AdressBook::~AdressBook()
+template<typename T>
+AdressBook<T>::~AdressBook()
 {
 
 }
 
-ostream& operator <<(ostream& output, const Record& t)
-{
-	output << t.name << " " << t.surname << " | " << t.street << " " << t.houseNumber << "  " << t.postalCode << " " << t.city << endl;
-	return output;
-}
+//ostream& operator <<(ostream& output, const Record& t)
+//{
+//	output << t.name << " " << t.surname << " | " << t.street << " " << t.houseNumber << "  " << t.postalCode << " " << t.city << endl;
+//	return output;
+//}
 
-ostream& operator<<(ostream& out, const AdressBook& ph)
+template<typename T>
+ostream& operator << (ostream& out, const AdressBook<T>& ph)
 {
 	if (ph.tableCap != 0)
 	{
@@ -51,12 +55,14 @@ ostream& operator<<(ostream& out, const AdressBook& ph)
 	else cout << endl << "There is no records in adress book. Add some records choosing option 2." << endl;
 }
 
-Record AdressBook::getRecord(int i)
+template<typename T>
+Record AdressBook<T>::getRecord(int i)
 {
 	return RecordContainer[i];
 }
 
-bool AdressBook::readFromFile()
+template<typename T>
+bool AdressBook<T>::readFromFile()
 {
 	int fileLines = 0;
 	string line;
@@ -84,7 +90,8 @@ bool AdressBook::readFromFile()
 	return 1;
 }
 
-bool AdressBook::saveToFile()
+template<typename T>
+bool AdressBook<T>::saveToFile()
 {
 	ofstream ofs("save.txt", ios::out | ios::trunc);
 
@@ -112,7 +119,8 @@ bool AdressBook::saveToFile()
 	}
 }
 
-void AdressBook::searchRecord()
+template<typename T>
+void AdressBook<T>::searchRecord()
 {
 	cout << endl << "------ Searching ------" << endl;
 	cout << "I want to search by: " << endl;
@@ -236,6 +244,7 @@ void AdressBook::searchRecord()
 
 }
 
+template<typename T>
 string EditHelper(string &str)
 {
 	string endEdition;
@@ -251,7 +260,8 @@ string EditHelper(string &str)
 	return endEdition;
 }
 
-void AdressBook::editRecord()
+template<typename T>
+void AdressBook<T>::editRecord()
 {
 	cout << endl << "------ Editing records ------" << endl;
 	cout << "Search contact to edit by surname: ";
@@ -293,7 +303,7 @@ void AdressBook::editRecord()
 					case 1:
 					{
 						cout << "Enter new name: ";
-						endEdition = EditHelper(RecordContainer[i].name);
+						//endEdition = EditHelper(RecordContainer[i].name);
 						break;
 					}
 					case 2:
@@ -379,7 +389,8 @@ void AdressBook::editRecord()
 	}
 }
 
-void AdressBook::deleteRecord()
+template<typename T>
+void AdressBook<T>::deleteRecord()
 {
 	cout << endl << "------ Deleting records ------" << endl;
 	cout << "Search contact to delete by surname: ";

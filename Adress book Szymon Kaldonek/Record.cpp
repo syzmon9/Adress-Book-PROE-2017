@@ -48,3 +48,9 @@ istream& operator >>(fstream& inputFile, Record& t)
 	}
 	return inputFile;
 }
+
+ostream& operator <<(ostream& output, const Record& t)
+{
+	output << t.name << " " << t.surname << " | " << t.street << " " << t.houseNumber << "  " << t.postalCode << " " << t.city << endl;
+	return output;
+}

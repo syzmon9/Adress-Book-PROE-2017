@@ -1,0 +1,9 @@
+﻿  main.cpp
+c:\users\szymon\source\repos\adress-book-proe-2017\adress book szymon kaldonek\adressbook.cpp(14): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  c:\users\szymon\source\repos\adress-book-proe-2017\adress book szymon kaldonek\adressbook.cpp(13): note: while compiling class template member function 'int AdressBook<Record>::getVectorCap(void)'
+  c:\users\szymon\source\repos\adress-book-proe-2017\adress book szymon kaldonek\adressbook.cpp(401): note: see reference to function template instantiation 'int AdressBook<Record>::getVectorCap(void)' being compiled
+  c:\users\szymon\source\repos\adress-book-proe-2017\adress book szymon kaldonek\adressbook.cpp(7): note: while compiling class template member function 'AdressBook<Record>::AdressBook(void)'
+  c:\users\szymon\source\repos\adress-book-proe-2017\adress book szymon kaldonek\main.cpp(20): note: see reference to function template instantiation 'AdressBook<Record>::AdressBook(void)' being compiled
+  c:\users\szymon\source\repos\adress-book-proe-2017\adress book szymon kaldonek\main.cpp(20): note: see reference to class template instantiation 'AdressBook<Record>' being compiled
+c:\users\szymon\source\repos\adress-book-proe-2017\adress book szymon kaldonek\adressbook.cpp(56): warning C4715: 'operator<<<Record>': not all control paths return a value
+  Adress book Szymon Kaldonek.vcxproj -> C:\Users\Szymon\Source\Repos\Adress-Book-PROE-2017\x64\Debug\Adress book Szymon Kaldonek.exe

@@ -8,9 +8,10 @@
 
 using namespace std;
 
+template<typename T>
 class AdressBook
 {
-	vector<Record> RecordContainer;
+	vector<T> RecordContainer;
 	int tableCap;
 
 public:
@@ -24,9 +25,12 @@ public:
 	bool saveToFile();
 	void editRecord();
 
-	friend std::ostream& operator<<(std::ostream&, const AdressBook& t);
+	template<typename T>
+	friend ostream& operator<< (ostream& out, const AdressBook<T>&);
 
 	~AdressBook();
 };
 
-std::ostream& operator<<(std::ostream&, const Record& t);
+//std::ostream& operator<<(std::ostream&, const Record& t);
+
+#include "AdressBook.cpp"

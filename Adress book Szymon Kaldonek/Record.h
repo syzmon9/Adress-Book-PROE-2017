@@ -14,4 +14,7 @@ public:
 	~Record();
 
 	friend istream& operator>>(fstream&, Record& t);
+
 };
+
+std::ostream& operator<<(std::ostream&, const Record& t);

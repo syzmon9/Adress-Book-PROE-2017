@@ -17,7 +17,7 @@ using namespace std;
 int main()
 {
 	bool flag = 1;
-	AdressBook adressBook;
+	AdressBook<Record> adressBook;
 	adressBook.readFromFile();
 	int option;
 	while (flag == 1)
@@ -44,17 +44,23 @@ int main()
 			cout << "\n------ Adding a record ------" << endl;
 			string tempName, tempSurname, tempStreet, tempHouseNumber, tempPostal, tempCity;
 			cout << "Enter name: ";
-			getline(cin, tempName);
+			cin >> tempName;
+			//getline(cin, tempName);
 			cout << "Enter surname: ";
-			getline(cin, tempSurname);
+			//getline(cin, tempSurname);
+			cin >> tempSurname;
 			cout << "Enter street: ";
-			getline(cin, tempStreet);
+			//getline(cin, tempStreet);
+			cin >> tempStreet;
 			cout << "Enter house number: ";
-			getline(cin, tempHouseNumber);
+			//getline(cin, tempHouseNumber);
+			cin >> tempHouseNumber;
 			cout << "Enter postal code: ";
-			getline(cin, tempPostal);
+			//getline(cin, tempPostal);
+			cin >> tempPostal;
 			cout << "Enter city: ";
-			getline(cin, tempCity);
+			//getline(cin, tempCity);
+			cin >> tempCity;
 			Record record(tempName, tempSurname, tempStreet, tempHouseNumber, tempPostal, tempCity);
 			if (adressBook.addRecord(record) == 1)
 				cout << "Record added sucesfully" << endl;
